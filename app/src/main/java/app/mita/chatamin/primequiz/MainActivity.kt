@@ -1,4 +1,4 @@
-package app.mita.chatamin.primequi
+package app.mita.chatamin.primequiz
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -80,8 +80,8 @@ class MainActivity : AppCompatActivity() {
         val number = questions[answerCount]
 
         for (i in 2 until number){
-            if (number % i != 0){
-                answer = false
+            if (number % i == 0){
+                answer = true
                 break
             }
         }
@@ -94,9 +94,9 @@ class MainActivity : AppCompatActivity() {
 
         if (answer){
             point++
-            Log.d("maru","正解"+point.toString())
+            Log.d("batsu","不正解"+point.toString())
         } else{
-            Log.d("maru", "不正解")
+            Log.d("batsu", "正解")
         }
 
         answerCount++
